@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1681050050 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\commonfunction.cpp
+	"CommonFunction.h"
+
+1681055220 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\commonfunction.h
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	<sstream>
+	<iostream>
+	<vector>
+
+1681050050 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imageobjectbase.cpp
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+
+1681050049 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imageobjectbase.h
+	"CommonFunction.h"
+
+1681050049 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imptimer.cpp
+	"ImpTimer.h"
+	"CommonFunction.h"
+
+1681050050 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imptimer.h
+
+1681052165 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\base.cpp
+	"Base.h"
+
+1681052147 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\base.h
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+
+1681055063 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\bird.cpp
+	"Bird.h"
+
+1681055311 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\bird.h
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+
+1681054580 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\main.cpp
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+	"ImpTimer.h"
+	"Base.h"
+	"Bird.h"
+
