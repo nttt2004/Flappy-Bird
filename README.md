@@ -14,7 +14,7 @@
   + Đi qua khoảng trống giữa 2 ống nước
   + Đụng chướng ngại vật sẽ thua
 
-#Updating:
+# Updating:
 + Pipes
 + Music
 + CheckCollision
