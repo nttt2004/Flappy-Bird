@@ -16,6 +16,7 @@ public:
     virtual bool loadImg(std::string path, SDL_Renderer* screen); // tính đa hình trong c++
     void Render(SDL_Renderer* des, const SDL_Rect* clip = NULL);
     void Free();
+
 protected:
     SDL_Texture* p_object_; // luu tru cac hinh anh
     SDL_Rect rect_; // lưu kích thước

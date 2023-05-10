@@ -22,6 +22,7 @@ public:
     void set_clips();
 
     void DoBird();
+    SDL_Rect GetRectFrame();
 
 private:
     float x_val_;
@@ -36,7 +37,7 @@ private:
     SDL_Rect frame_clip_[3];
     int frame_;
 
-    Input input_type_;
+    Input input_type_; //jump
 };
 
 
