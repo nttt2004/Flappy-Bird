@@ -4,17 +4,13 @@
 #include "Base.h"
 #include "Bird.h"
 #include "Pipes.h"
-#include "Power.h"
 #include "TextObject.h"
-#include "Menu.h"
 
 ImageObjectBase g_background;
 ImageObjectBase ready_background;
 
 Base g_base;
 Pipes g_pipes;
-//Power g_power;
-//Menu g_menu;
 
 TTF_Font* g_font_text = NULL;
 TTF_Font* g_font_MENU = NULL;
@@ -70,20 +66,6 @@ bool InitData()
 
         if(Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096)==-1)
             success = false;
-
-        //Init audio
-
-        /*
-
-        g_sound_bullet[0] = Mix_LoadWAV("audio//flap.wav");
-        g_sound_bullet[1] = Mix_LoadWAV("audio//point.wav");
-
-        g_sound_exp[0] = Mix_LoadWAV("audio//game_over.wav");
-        if(g_sound_bullet[0] == NULL || g_sound_bullet[1] == NULL||g_sound_exp[0] == NULL)
-        {
-            return false;
-        }
-        */
     }
 
     return success;
@@ -96,13 +78,14 @@ bool LoadBackground()
     return true;
 }
 
+/*
 bool LoadReadyBackground()
 {
     bool ret = ready_background.loadImg("image//get_ready.png", g_screen);
     if(!ret) return false;
     return true;
 }
-
+*/
 bool LoadBase()
 {
     bool ret = g_base.LoadImg("image//base.png", g_screen);
@@ -123,14 +106,17 @@ bool LoadMusic()
 {
     bool success = true;
 
-    /*g_music = Mix_LoadWAV("audio//chiptune-grooving-142242.wav");
+    /*
+    g_music = Mix_LoadWAV("audio//chiptune-grooving-142242.wav");
     if (g_music == NULL)
     {
         printf("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
         success = false;
     }else
-        Mix_PlayChannel(-1, g_music, 0);*/
-        g_music = Mix_LoadMUS("audio//chiptune-grooving-142242.mp3");
+        Mix_PlayChannel(-1, g_music, 0);
+    */
+
+    g_music = Mix_LoadMUS("audio//chiptune-grooving-142242.mp3");
     if (g_music == NULL)
     {
         printf("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
@@ -144,7 +130,6 @@ void close()
     g_background.Free();
     g_base.Free();
     g_pipes.Free();
-    //g_power.Free();
 
     SDL_DestroyRenderer(g_screen);
     g_screen = NULL;
@@ -169,14 +154,16 @@ int main(int argc, char* argv[])
         return -1;
     if (LoadBackground() == false)
         return -1;
+    /*
     if(LoadReadyBackground() == false)
         return -1;
+    */
+
     if (LoadBase() == false)
         return -1;
     if(LoadPipe() == false)
         return -1;
-    //if(LoadPower() == false)
-        //return -1;
+
     if(LoadMusic() == false)
         return -1;
 
@@ -187,6 +174,7 @@ int main(int argc, char* argv[])
     if (ret_menu == 1)
         is_quit = true;
    // bool ready = false;
+
 again_label:
     TextObject score_game;
     score_game.SetColor(TextObject::WHITE_TEXT);
@@ -226,19 +214,7 @@ again_label:
         p_bird.DoBird();
         p_bird.Show(g_screen);
 
-        //g_power.Show(g_screen);
-
-        //g_pipes.createPipe(g_screen);
-        //g_pipes.updatePipe(g_screen);
         g_pipes.Show(g_screen, p_bird.GetRectFrame());
-        //g_pipes.Render(g_screen);
-
-        //g_pipes.CheckPass(p_bird.GetRectFrame());
-
-
-        //g_pipes.CheckCollision(p_bird.GetRect(), g_pipes.GetRect());
-
-
 
         if(g_pipes.CheckPass(p_bird.GetRectFrame()))
         {

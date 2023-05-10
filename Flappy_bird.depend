@@ -42,7 +42,7 @@
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 
-1683738243 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\main.cpp
+1683738769 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\main.cpp
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 	"ImpTimer.h"
@@ -56,7 +56,7 @@
 1683736557 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\pipes.cpp
 	"Pipes.h"
 
-1683683111 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\pipes.h
+1683739264 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\pipes.h
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 	"Bird.h"

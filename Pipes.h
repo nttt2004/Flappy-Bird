@@ -23,26 +23,15 @@ public:
 
   bool LoadImg(std::string path, SDL_Renderer* screen);
   void Show(SDL_Renderer* des, SDL_Rect birdRect);
- // bool CheckCol(SDL_Rect birdRect, SDL_Rect pipeRect);
   bool CheckPass(SDL_Rect rect);
-  void GetRectSlot();
-
   bool isGameOver(SDL_Rect birdRect);
 
   int gPipes[NUM_PIPES][2];
   void initPipe();
   SDL_Rect GetRect() const { return rect_; }
-  //void Render(SDL_Renderer screen);
-  //int GetScore(SDL_Rect birdRect, int& score);
-  //int score;
-private:
-    //int score;
-   //SDL_Rect pipeNorth;
-   //SDL_Rect pipeSouth;
-   //Bird* bird;
-   SDL_Rect slot_rect_;
-   //bool passed;
 
+private:
+   SDL_Rect slot_rect_;
 };
 
 

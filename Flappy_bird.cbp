@@ -41,14 +41,8 @@
 		<Unit filename="ImageObjectBase.h" />
 		<Unit filename="ImpTimer.cpp" />
 		<Unit filename="ImpTimer.h" />
-		<Unit filename="Menu.cpp" />
-		<Unit filename="Menu.h" />
 		<Unit filename="Pipes.cpp" />
 		<Unit filename="Pipes.h" />
-		<Unit filename="Power.cpp" />
-		<Unit filename="Power.h" />
-		<Unit filename="Score.cpp" />
-		<Unit filename="Score.h" />
 		<Unit filename="TextObject.cpp" />
 		<Unit filename="TextObject.h" />
 		<Unit filename="main.cpp" />
