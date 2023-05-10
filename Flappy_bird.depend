@@ -1,21 +1,25 @@
 # depslib dependency file v1.0
-1681050050 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\commonfunction.cpp
+1683729418 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\commonfunction.cpp
 	"CommonFunction.h"
 
-1681055220 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\commonfunction.h
+1683719961 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\commonfunction.h
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
 	<stdio.h>
-	<string>
+	<cstring>
 	<sstream>
 	<iostream>
 	<vector>
+	"ImageObjectBase.h"
+	"TextObject.h"
 
-1681050050 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imageobjectbase.cpp
+1681293745 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imageobjectbase.cpp
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 
-1681050049 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imageobjectbase.h
+1683592021 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imageobjectbase.h
 	"CommonFunction.h"
 
 1681050049 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imptimer.cpp
@@ -24,24 +28,60 @@
 
 1681050050 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\imptimer.h
 
-1681052165 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\base.cpp
+1683050127 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\base.cpp
 	"Base.h"
 
-1681052147 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\base.h
+1683084945 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\base.h
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 
-1681055063 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\bird.cpp
+1683684255 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\bird.cpp
 	"Bird.h"
 
-1681055311 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\bird.h
+1683458837 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\bird.h
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 
-1681054580 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\main.cpp
+1683738243 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\main.cpp
 	"CommonFunction.h"
 	"ImageObjectBase.h"
 	"ImpTimer.h"
 	"Base.h"
 	"Bird.h"
+	"Pipes.h"
+	"Power.h"
+	"TextObject.h"
+	"Menu.h"
+
+1683736557 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\pipes.cpp
+	"Pipes.h"
+
+1683683111 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\pipes.h
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+	"Bird.h"
+
+1683439502 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\score.cpp
+
+1683446078 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\power.h
+	"ImageObjectBase.h"
+	<vector>
+
+1683452873 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\power.cpp
+	"Power.h"
+
+1683651357 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\textobject.cpp
+	"TextObject.h"
+
+1683653391 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\textobject.h
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+	"SDL_ttf.h"
+
+1683715085 c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\menu.h
+	"CommonFunction.h"
+	"ImageObjectBase.h"
+
+1683715155 source:c:\users\thu trang\downloads\c++\flappy_bird\flappy_bird\menu.cpp
+	"Menu.h"
 

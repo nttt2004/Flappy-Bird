@@ -61,7 +61,11 @@ bool Pipes::CheckCol(SDL_Rect birdRect, SDL_Rect pipeRect)
 bool Pipes::CheckPass(SDL_Rect birdrect)
 {
     for(int i=0; i<NUM_PIPES; i++){
-      if(SDLCommonFunc::CheckCollision(birdrect, slot_rect_))
+        slot_rect_.x = gPipes[i][0] + PIPE_WIDTH;
+        slot_rect_.y = gPipes[i][1];
+        slot_rect_.w = 5;
+        slot_rect_.h = PIPE_GAP;
+        if(SDLCommonFunc::CheckCollision(birdrect, slot_rect_))
         return true;
       return false;
     }
@@ -143,11 +147,17 @@ void Pipes::Show(SDL_Renderer* des, SDL_Rect birdRect)
         bool isCol = Pipes::isGameOver(birdRect);
             if (isCol == true)
             {
-                Mix_Chunk* beep_sound = Mix_LoadWAV("audio//game_over.wav");
+                Mix_Chunk* beep_sound = Mix_LoadWAV("audio//hit.wav");
                 if (beep_sound != NULL)
                     Mix_PlayChannel(-1, beep_sound, 0);
+                Mix_PauseMusic();
+
+                Mix_Chunk* lose_sound = Mix_LoadWAV("audio//game_over.wav");
+                if (lose_sound != NULL)
+                    Mix_PlayChannel(-1, lose_sound, 0);
                 break;
             }
+
 
         bool ret = CheckPass(birdRect);
             if (ret == true)
@@ -161,4 +171,3 @@ void Pipes::Show(SDL_Renderer* des, SDL_Rect birdRect)
     }
 
 }
-

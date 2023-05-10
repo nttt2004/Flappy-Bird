@@ -65,8 +65,6 @@ void Bird::Show(SDL_Renderer* des)
 
     SDL_RenderCopy(des, p_object_, current_clip, &renderQuad);
 
-
-
 }
 
 void Bird::HandelInputAction(SDL_Event events, SDL_Renderer* screen)
@@ -78,7 +76,6 @@ void Bird::HandelInputAction(SDL_Event events, SDL_Renderer* screen)
         case SDLK_SPACE:
         {
             input_type_.jump_ = 1;
-
         }
         break;
 
@@ -100,6 +97,12 @@ void Bird::HandelInputAction(SDL_Event events, SDL_Renderer* screen)
             break;
         }
     }
+    if (input_type_.jump_ == 1)
+    {
+        Mix_Chunk* beep_sound = Mix_LoadWAV("audio//flap.wav");
+        if (beep_sound != NULL)
+            Mix_PlayChannel(-1, beep_sound, 0);
+    }
 }
 
 void Bird::DoBird()
@@ -113,7 +116,17 @@ void Bird::DoBird()
         }
     if (input_type_.jump_ == 1)
         {
-                y_val_ = -BIRD_JUMP_VEL_Y;
+            y_val_ = -BIRD_JUMP_VEL_Y;
         }
     y_pos_ += y_val_;
+}
+
+SDL_Rect Bird::GetRectFrame()
+{
+    SDL_Rect rect_frame;
+    rect_frame.x = rect_.x;
+    rect_frame.y = rect_.y;
+    rect_frame.w = width_frame_;
+    rect_frame.h = height_frame_;
+    return rect_frame;
 }
