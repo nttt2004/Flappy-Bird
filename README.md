@@ -6,15 +6,15 @@
   + Phát triển bởi 1 lập trình viên người Việt vào năm 2013
   + Mục tiêu: Điều khiển một chú chim bay qua những cái ống.
   + Mở đầu:
-  ![image](https://github.com/nttt2004/Game_SDL/assets/124849254/e459c83a-c4e8-44bd-903b-4051adc11517)
-  Bạn có thể lựa chọn "Play" để bắt đầu chơi hoặc "Exit" để thoát game
+  <img width="749" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/f54f049e-d352-4cd3-98e8-a772c5574692">
+  + Bạn có thể lựa chọn "Play" để bắt đầu chơi hoặc "Exit" để thoát game
   
   + Khi đang chơi:
-  ![image](https://github.com/nttt2004/Game_SDL/assets/124849254/2bebe6e9-3173-4f05-b685-8ec16077b2f9)
+  <img width="747" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/ce569206-1c0d-4b08-94ca-4faf3fb70af7">
   
   + Va chạm vào chướng ngại vật -> GameOver:
   <img width="750" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/3c457b48-cb2b-4de9-9308-96d6a0580758">
-  Màn hình hiển thị 2 lựa chọn "Yes" nếu bạn muốn chơi lại và "No" nếu bạn muốn thoát trò chơi
+  + Màn hình hiển thị 2 lựa chọn "Yes" nếu bạn muốn chơi lại và "No" nếu bạn muốn thoát trò chơi
   
   
 # Luật chơi:
