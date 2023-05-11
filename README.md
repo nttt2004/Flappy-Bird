@@ -11,7 +11,10 @@
   Bạn có thể lựa chọn "Play" để bắt đầu chơi hoặc "Exit" để thoát game
   
   + Khi đang chơi:
-  <img width="747" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/ce569206-1c0d-4b08-94ca-4faf3fb70af7">
+  <img width="751" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/c91980c1-c4ae-456e-a7fa-c4675dc8c930">
+  
+  Có giới hạn thời gian chơi là 300 giây
+  Hết thời gian game sẽ tự động tắt
   
   + Va chạm vào chướng ngại vật -> GameOver:
   <img width="752" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/098b282f-4678-4398-9a68-d82ec322103a">
