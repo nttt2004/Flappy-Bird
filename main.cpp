@@ -239,12 +239,12 @@ again_label:
 
         //Show game score
         std::string val_str_score = std::to_string(score_value);
-        std::string strScore("");
+        std::string strScore("Score: ");
         strScore += val_str_score;
 
         score_game.SetText(strScore);
         score_game.LoadFromRenderText(g_font_text, g_screen);
-        score_game.RenderText(g_screen, SCREEN_WIDTH*0.5-15, 15);
+        score_game.RenderText(g_screen, 200, 15);
 
         bool game_over = g_pipes.isGameOver(p_bird.GetRectFrame());
         if(game_over == true)
