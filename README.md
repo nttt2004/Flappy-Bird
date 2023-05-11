@@ -14,7 +14,9 @@
  <img width="748" alt="image" src="https://github.com/nttt2004/Game_SDL/assets/124849254/6984bca4-88d5-4070-842b-0470ed95f195">
  
   Có hiển thị điểm 
+  
   Có giới hạn thời gian chơi là 300 giây
+  
   Hết thời gian game sẽ tự động tắt
   
   + Va chạm vào chướng ngại vật -> GameOver:
