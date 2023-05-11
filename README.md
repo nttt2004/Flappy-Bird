@@ -24,6 +24,9 @@
   
   Màn hình hiển thị 2 lựa chọn "Yes" nếu bạn muốn chơi lại và "No" nếu bạn muốn thoát trò chơi
   
+  + Video demo:
+  
+  https://www.youtube.com/watch?v=LaqlinEou6w
   
 # Luật chơi:
   + Nếu chú chim va chạm vào chướng ngại vật(ống nước và nền đất) thì Game Over
