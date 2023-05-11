@@ -5,6 +5,7 @@
 #include "Bird.h"
 #include "Pipes.h"
 #include "TextObject.h"
+#include <algorithm>
 
 ImageObjectBase g_background;
 ImageObjectBase ready_background;
@@ -54,7 +55,7 @@ bool InitData()
         if (TTF_Init() == -1)
             success = false;
 
-        g_font_text = TTF_OpenFont("font//DlxFont.ttf", 30);
+        g_font_text = TTF_OpenFont("font//DlxFont.ttf", 20);
         if (g_font_text == NULL)
             success = false;
 
@@ -78,14 +79,6 @@ bool LoadBackground()
     return true;
 }
 
-/*
-bool LoadReadyBackground()
-{
-    bool ret = ready_background.loadImg("image//get_ready.png", g_screen);
-    if(!ret) return false;
-    return true;
-}
-*/
 bool LoadBase()
 {
     bool ret = g_base.LoadImg("image//base.png", g_screen);
@@ -154,11 +147,6 @@ int main(int argc, char* argv[])
         return -1;
     if (LoadBackground() == false)
         return -1;
-    /*
-    if(LoadReadyBackground() == false)
-        return -1;
-    */
-
     if (LoadBase() == false)
         return -1;
     if(LoadPipe() == false)
@@ -169,16 +157,24 @@ int main(int argc, char* argv[])
 
     bool  is_quit = false;
     Mix_PlayMusic(g_music, -1);
+
     //Make menu game
     int ret_menu = SDLCommonFunc::ShowMenu(g_screen, g_font_MENU, "Play Game", "Exit", "image//background05.png");
     if (ret_menu == 1)
         is_quit = true;
-   // bool ready = false;
 
 again_label:
     TextObject score_game;
     score_game.SetColor(TextObject::WHITE_TEXT);
     Uint32 score_value = 0;
+
+    TextObject highscore;
+    highscore.SetColor(TextObject::WHITE_TEXT);
+    Uint32 score_val = 0;
+
+    TextObject time_game;
+    time_game.SetColor(TextObject::WHITE_TEXT);
+    Uint32 val_time = 0;
 
     Bird p_bird;
     p_bird.loadImg("image//bird.png", g_screen);
@@ -220,6 +216,36 @@ again_label:
         {
             score_value++;
         }
+
+        //Show game time
+
+        std::string str_time = "Time: ";
+        Uint32 time_val = SDL_GetTicks()/1000; //giay
+        Uint32 val_time = 300 - time_val;
+        if(val_time <= 0)
+        {
+                is_quit = true;
+                break;
+        }
+        else
+        {
+            std::string str_val = std::to_string(val_time);
+            str_time += str_val;
+
+            time_game.SetText(str_time);
+            time_game.LoadFromRenderText(g_font_text, g_screen);
+            time_game.RenderText(g_screen, SCREEN_WIDTH - 300, 15);
+        }
+
+        //Show game score
+        std::string val_str_score = std::to_string(score_value);
+        std::string strScore("");
+        strScore += val_str_score;
+
+        score_game.SetText(strScore);
+        score_game.LoadFromRenderText(g_font_text, g_screen);
+        score_game.RenderText(g_screen, SCREEN_WIDTH*0.5-15, 15);
+
         bool game_over = g_pipes.isGameOver(p_bird.GetRectFrame());
         if(game_over == true)
         {
@@ -238,44 +264,25 @@ again_label:
             else
             {
                 is_quit = false;
-                //g_pipes.Free();
                 goto again_label;
             }
 
         }
 
-        //Show game time
+
         /*
-        std::string str_time = "Time: ";
-        Uint32 time_val = SDL_GetTicks()/1000; //giay
-        Uint32 val_time = 300 - time_val;
-        if(val_time <= 0)
-        {
-            //if(MessageBox(NULL, L"GAME OVER", L"Info", MB_OK | MB_INCONSTOP) == IDOK)
-            //{
-                is_quit = true;
-                break;
-            //}
-        }
-        else
-        {
-            std::string str_val = std::to_string(val_time);
-            str_time += str_val;
 
-            time_game.SetText(str_time);
-            time_game.LoadFromRenderText(g_font_text, g_screen);
-            time_game.RenderText(g_screen, SCREEN_WIDTH - 200, 15);
-        }
+        int high_score = max(temp_score, score_value);
+        temp_score = high_score;
+
+        std::string val_str_score = std::to_string(high_score);
+        std::string str_Score("High Score: ");
+
+        highscore.SetText(str_Score);
+        highscore.LoadFromRenderText(g_font_text, g_screen);
+        highscore.RenderText(g_screen, 300, 15);
+
         */
-
-        std::string val_str_score = std::to_string(score_value);
-        std::string strScore("");
-        strScore += val_str_score;
-
-        score_game.SetText(strScore);
-        score_game.LoadFromRenderText(g_font_text, g_screen);
-        score_game.RenderText(g_screen, SCREEN_WIDTH*0.5-15, 15);
-
 
         SDL_RenderPresent(g_screen);
 
